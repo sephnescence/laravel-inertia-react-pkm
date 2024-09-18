@@ -11,12 +11,20 @@ Check out [history.md](history.md) for how I bootstrapped this project
 
 ## Quick start
 
-1. Dive in with: `cd breeze-react` && `./vendor/bin/sail up`
-   1. I'm not too sure how to jailbreak this as yet. I will probably deploy it to Fargate or EC2
-   1. Also, interesting - Selenium makes logs about OpenTelemetry. Wonder if that's properly supported out of the box
-1. But before you actually do the above, be sure to do the normal `cp .env.example .env`
-   1. `./vendor/bin/sail artisan key:generate` will generate `APP_KEY`
+1. Make sure you're in the right directory - `cd breeze-react`
+1. Run the following - `cp .env.example .env` and make updates accordingly
+   1. `APP_KEY` is required to boot Laravel. You can run `./vendor/bin/sail artisan key:generate` to generate it
+1. Run `./vendor/bin/sail up`
 1. Run `./vendor/bin/sail artisan migrate`
+1. Run `./vendor/bin/sail npm run dev` in another terminal window
+1. By default the site's url is `http://localhost`
+
 1. By default the site's url is `http://0.0.0.0/`
-   1. I haven't added an HTTPS cert yet
+1. `sail up` will essentially run the sit in production mode. If you want Hot Module Replacement, you will also need to run `./vendor/bin/sail npm run dev` in another terminal window
+
+## Troubleshooting
+
+1. If your app fails to start - Make sure you've migrated the database
    1. It will likely crash on the first load if you haven't migrated yet
+1. I have visited `http://0.0.0.0/` and nothing loads
+   1. Running `sail up` will expose `http://0.0.0.0/`, but after running `sail npm run dev` this address ceases to work properly. Leading to some confusion. Be sure to try `http://localhost`, but more specifically, pay attention to the address that's in your second terminal when running `./vendor/bin/sail npm run dev`
