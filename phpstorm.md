@@ -21,7 +21,8 @@ I've been working through https://laracasts.com/series/phpstorm-for-laravel-deve
 
 ## What I hate
 
-1. Copy relative path is a multi-click ordeal. vscode has it natively on the dropdown when you right-click a file
+1. Copy relative path is a multi-click ordeal. vscode has it natively on the dropdown when you right-click a file. I was
+   at least able to re-bind it to Shift+Command+C (Overriding "Copy Absolute Path")
 2. Laravel Idea doesn't seem to be able to handle mono-repos. I have to open the folder at the Laravel level. It will be
    able to create models, etc. in the appropriate place, but the icon doesn't seem to appear everywhere it should
 3. It doesn't follow proper markdown conventions. It complains that I don't have bullet points explicitly as 1. 2. 3.

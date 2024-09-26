@@ -1,0 +1,8 @@
+{
+    "http-basic": {
+        "nova.laravel.com": {
+            "username": "Run `composer config http-basic.nova.laravel.com <email> <token>`",
+            "password": "Run `composer config http-basic.nova.laravel.com <email> <token>`"
+        }
+    }
+}
