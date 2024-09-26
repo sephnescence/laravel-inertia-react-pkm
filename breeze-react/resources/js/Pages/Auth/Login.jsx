@@ -1,31 +1,35 @@
-import Checkbox from '@/Components/Checkbox';
-import GuestLayout from '@/Layouts/GuestLayout';
-import InputError from '@/Components/InputError';
-import InputLabel from '@/Components/InputLabel';
-import PrimaryButton from '@/Components/PrimaryButton';
-import TextInput from '@/Components/TextInput';
-import { Head, Link, useForm } from '@inertiajs/react';
+import Checkbox from '@/Components/Checkbox'
+import GuestLayout from '@/Layouts/GuestLayout'
+import InputError from '@/Components/InputError'
+import InputLabel from '@/Components/InputLabel'
+import PrimaryButton from '@/Components/PrimaryButton'
+import TextInput from '@/Components/TextInput'
+import { Head, Link, useForm } from '@inertiajs/react'
 
 export default function Login({ status, canResetPassword }) {
     const { data, setData, post, processing, errors, reset } = useForm({
         email: '',
         password: '',
         remember: false,
-    });
+    })
 
     const submit = (e) => {
-        e.preventDefault();
+        e.preventDefault()
 
         post(route('login'), {
             onFinish: () => reset('password'),
-        });
-    };
+        })
+    }
 
     return (
         <GuestLayout>
             <Head title="Log in" />
 
-            {status && <div className="mb-4 font-medium text-sm text-green-600">{status}</div>}
+            {status && (
+                <div className="mb-4 text-sm font-medium text-green-600">
+                    {status}
+                </div>
+            )}
 
             <form onSubmit={submit}>
                 <div>
@@ -61,22 +65,26 @@ export default function Login({ status, canResetPassword }) {
                     <InputError message={errors.password} className="mt-2" />
                 </div>
 
-                <div className="block mt-4">
+                <div className="mt-4 block">
                     <label className="flex items-center">
                         <Checkbox
                             name="remember"
                             checked={data.remember}
-                            onChange={(e) => setData('remember', e.target.checked)}
+                            onChange={(e) =>
+                                setData('remember', e.target.checked)
+                            }
                         />
-                        <span className="ms-2 text-sm text-gray-600">Remember me</span>
+                        <span className="ms-2 text-sm text-gray-600">
+                            Remember me
+                        </span>
                     </label>
                 </div>
 
-                <div className="flex items-center justify-end mt-4">
+                <div className="mt-4 flex items-center justify-end">
                     {canResetPassword && (
                         <Link
                             href={route('password.request')}
-                            className="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                            className="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                         >
                             Forgot your password?
                         </Link>
@@ -88,5 +96,5 @@ export default function Login({ status, canResetPassword }) {
                 </div>
             </form>
         </GuestLayout>
-    );
+    )
 }

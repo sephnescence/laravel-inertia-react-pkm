@@ -17,6 +17,7 @@ Check out [history.md](history.md) for how I bootstrapped this project
    array being in the same tab depth
 5. PEST v3 will be coming soon
 6. GitHub Actions will be coming soon (as well as making PRs a requirement. I'm merging directly to main at the moment)
+7. https://packagist.org/packages/openai-php/laravel
 
 ## Quick start
 
@@ -29,13 +30,16 @@ Check out [history.md](history.md) for how I bootstrapped this project
 6. By default, the site's url is `http://localhost`
 
 7. By default, the site's url is `http://0.0.0.0/`
-8. `sail up` will essentially run the sit in production mode. If you want Hot Module Replacement, you will also need to
+8. `sail up` will essentially run the site in production mode. If you want Hot Module Replacement, you will also need to
    run `./vendor/bin/sail npm run dev` in another terminal window
 
 ## Tooling
 
 1. Experimenting with PhpStorm and Laravel Idea for now. This means that I won't need to worry about generating IDE
    Helpers because it's something I'll have to be in the habit of updating constantly with cmd+shift+.
+2. Pest. You can run tests with `./vendor/bin/sail php ./vendor/bin/pest`. Remember to have `./vendor/bin/sail up`
+   running in another terminal. Refer to the documentation here - https://pestphp.com/docs/writing-tests
+3.
 
 ## General Tasks
 

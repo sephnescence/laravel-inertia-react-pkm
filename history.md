@@ -11,3 +11,9 @@ September 23, 2024 (a week from now). The first chapter is free so let's get sta
 5. `./vendor/bin/sail composer require laravel/breeze --dev`
 6. `./vendor/bin/sail artisan breeze:install react --ssr`
 7. `./vendor/bin/sail composer require laravel/pint --dev`
+8. `./vendor/bin/sail composer remove phpunit/phpunit`
+9. `./vendor/bin/sail composer require pestphp/pest --dev --with-all-dependencies`
+10. `./vendor/bin/pest --init`
+11. `npm i -D prettier prettier-plugin-tailwindcss`. Tailwind was already installed by breeze
+12. `touch .prettierrc.json`. I entered my favourites: semi - false, singleQuotes - true, and enabled the
+    prettier-plugin-tailwindcss plugin 
