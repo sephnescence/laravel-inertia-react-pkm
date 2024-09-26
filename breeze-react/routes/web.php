@@ -18,6 +18,18 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::group(['prefix' => 'examples'], function () {
+    Route::get('blade', function () {
+        return view('examples/blade');
+    });
+    Route::get('jsx', function () {
+        return Inertia::render('Examples/jsx');
+    });
+    Route::get('tsx', function () {
+        return 'TSX has not been enabled yet. I will have to configure vite and ts';
+    });
+});
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
