@@ -24,6 +24,7 @@ class UserFactory extends Factory
     public function definition(): array
     {
         return [
+            'id' => 'a2d56639-8099-47e4-a0d6-9c4fd120409a', // BTTODO - I'm not sure why I have to specify this
             'name' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
