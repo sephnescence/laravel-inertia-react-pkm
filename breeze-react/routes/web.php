@@ -25,6 +25,9 @@ Route::group(['prefix' => 'examples'], function () {
     Route::get('jsx', function () {
         return Inertia::render('Examples/jsx');
     });
+    Route::get('jsx-2', function () {
+        return Inertia::render('Examples/jsx-2');
+    });
     Route::get('tsx', function () {
         return 'TSX has not been enabled yet. I will have to configure vite and ts';
     });
