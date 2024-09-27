@@ -40,7 +40,6 @@ services:
             - sail
         volumes:
             - "sail-pgsql:/var/lib/postgresql/data"
-            - './vendor/laravel/sail/database/postgres/create-testing-database.sh:/docker-entrypoint-initdb.d/10-create-testing-database.sh'
     redis:
         image: 'redis:alpine'
         ports:
