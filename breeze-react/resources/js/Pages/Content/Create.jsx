@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link, router, usePage } from '@inertiajs/react'
+import RethoughtPage from '@/Components/RethoughtPage.jsx'
 
 export default function ContentCreate() {
     const { errors } = usePage().props
@@ -23,7 +24,7 @@ export default function ContentCreate() {
     }
 
     return (
-        <>
+        <RethoughtPage>
             <div className="mb-2 text-4xl">Create Content</div>
             <form onSubmit={handleSubmit}>
                 <div className="mb-2">
@@ -60,6 +61,6 @@ export default function ContentCreate() {
                     </Link>
                 </div>
             </form>
-        </>
+        </RethoughtPage>
     )
 }

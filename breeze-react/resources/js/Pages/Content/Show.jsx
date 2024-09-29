@@ -1,8 +1,9 @@
 import { Link } from '@inertiajs/react'
+import RethoughtPage from '@/Components/RethoughtPage.jsx'
 
 export default function ContentEdit({ content }) {
     return (
-        <>
+        <RethoughtPage>
             <div className="mb-2 text-4xl">View Content</div>
             <form onSubmit={() => false}>
                 <div className="mb-2">
@@ -30,6 +31,6 @@ export default function ContentEdit({ content }) {
                     </Link>
                 </div>
             </form>
-        </>
+        </RethoughtPage>
     )
 }

@@ -1,4 +1,5 @@
 import { Link, router } from '@inertiajs/react'
+import RethoughtPage from '@/Components/RethoughtPage.jsx'
 
 export default function ContentList({ contents }) {
     function handleDelete(e) {
@@ -10,7 +11,7 @@ export default function ContentList({ contents }) {
     }
 
     return (
-        <>
+        <RethoughtPage>
             <div className="mb-2 text-4xl">Contents</div>
             <p>
                 List all contents in our own Inertia page. Nova doing this will
@@ -62,6 +63,6 @@ export default function ContentList({ contents }) {
                     </div>
                 )
             })}
-        </>
+        </RethoughtPage>
     )
 }
