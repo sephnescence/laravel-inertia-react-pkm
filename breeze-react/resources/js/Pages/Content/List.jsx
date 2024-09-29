@@ -7,7 +7,7 @@ export default function ContentList({ contents }) {
 
         const formData = new FormData(e.target)
         const contentId = formData.get('contentId')
-        router.delete(`/content/${contentId}`)
+        router.delete(route('content.destroy', contentId))
     }
 
     return (
@@ -20,7 +20,7 @@ export default function ContentList({ contents }) {
             <Link
                 as={'button'}
                 className="rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-blue-500"
-                href={'/content/create'}
+                href={route('content.create')}
                 type={'button'}
             >
                 Create
@@ -33,7 +33,7 @@ export default function ContentList({ contents }) {
                             <Link
                                 as={'button'}
                                 className="rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-blue-500"
-                                href={`/content/${content.id}`}
+                                href={route('content.show', content.id)}
                                 type={'button'}
                             >
                                 View
@@ -41,7 +41,7 @@ export default function ContentList({ contents }) {
                             <Link
                                 as={'button'}
                                 className="rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-blue-500"
-                                href={`/content/${content.id}/edit`}
+                                href={route('content.edit', content.id)}
                                 type={'button'}
                             >
                                 Edit

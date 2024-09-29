@@ -36,6 +36,9 @@ export default function Authenticated({ header, children }) {
                                 >
                                     Content
                                 </NavLink>
+                                <NavLink href={route('nova.pages.home')}>
+                                    Nova
+                                </NavLink>
                             </div>
                         </div>
 

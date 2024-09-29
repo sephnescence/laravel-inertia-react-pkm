@@ -22,7 +22,7 @@ export default function ContentEdit({ content }) {
     function handleSubmit(e) {
         e.preventDefault()
         const contentId = values.id
-        router.patch(`/content/${contentId}`, values)
+        router.patch(route('content.update', contentId), values)
     }
 
     return (
@@ -56,7 +56,7 @@ export default function ContentEdit({ content }) {
                     <Link
                         as={'button'}
                         className="rounded-lg bg-gray-600 px-4 py-2 text-white hover:bg-gray-500"
-                        href={`/content`}
+                        href={route('content.index')}
                         type={'button'}
                     >
                         Cancel
