@@ -1,7 +1,9 @@
 import { useState } from 'react'
-import { router } from '@inertiajs/react'
+import { Link, router, usePage } from '@inertiajs/react'
 
 export default function ContentCreate() {
+    const { errors } = usePage().props
+
     const [values, setValues] = useState({
         content: '',
     })
@@ -22,28 +24,42 @@ export default function ContentCreate() {
 
     return (
         <>
+            <div className="mb-2 text-4xl">Create Content</div>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="content">Content:</label>
-                <input
-                    id="content"
-                    value={values.content}
-                    onChange={handleChange}
-                />
-                <a
-                    href={`/content`}
-                    className="rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-blue-500"
-                    type="submit"
-                >
-                    Submit
-                </a>
+                <div className="mb-2">
+                    <label>
+                        <div className="mb-1">Content</div>
+                        <textarea
+                            rows={4}
+                            className="min-w-full bg-slate-700 p-4"
+                            id="content"
+                            name="content"
+                            defaultValue={values.content}
+                            onChange={handleChange}
+                            placeholder="Item name"
+                        />
+                    </label>
+                    {errors?.content && (
+                        <div className="text-red-500">{errors?.content}</div>
+                    )}
+                </div>
+                <div className={'flex gap-2'}>
+                    <button
+                        className="rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-blue-500"
+                        type="submit"
+                    >
+                        Submit
+                    </button>
+                    <Link
+                        as={'button'}
+                        className="rounded-lg bg-gray-600 px-4 py-2 text-white hover:bg-gray-500"
+                        href={`/content`}
+                        type={'button'}
+                    >
+                        Cancel
+                    </Link>
+                </div>
             </form>
-            <a
-                href={`/content`}
-                className="rounded-lg bg-gray-600 px-4 py-2 text-white hover:bg-gray-500"
-                type="submit"
-            >
-                Cancel
-            </a>
         </>
     )
 }

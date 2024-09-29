@@ -6,7 +6,6 @@ use App\Http\Requests\StoreContentRequest;
 use App\Http\Requests\UpdateContentRequest;
 use App\Models\Content;
 use Inertia\Inertia;
-use Ramsey\Uuid\Uuid;
 
 class ContentController extends Controller
 {
@@ -27,11 +26,10 @@ class ContentController extends Controller
      */
     public function store(StoreContentRequest $request)
     {
+        $data = $request->validated();
+
         Content::create([
-            ...$request->validate([
-                'content' => ['required'],
-            ]),
-            'uuid' => Uuid::uuid4()->toString(),
+            'content' => $data['content'],
         ]);
 
         return to_route('content.index');

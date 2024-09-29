@@ -18,6 +18,7 @@ I've been working through https://laracasts.com/series/phpstorm-for-laravel-deve
    vscode
 3. I can move my cursor back out of the Terminal with Cmd+E. I still have to hit up to select the current file. There's
    probably a better way to do this, but at least it's better than vscode where I have to use the mouse
+4. Double clicking a variable includes the $ sign too. This is so unbelievably messed up that vscode doesn't lol
 
 ## What I hate
 
