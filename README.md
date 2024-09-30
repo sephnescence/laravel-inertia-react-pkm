@@ -21,16 +21,18 @@ Check out [history.md](history.md) for how I bootstrapped this project
 
 ## Quick start
 
-1. Make sure you're in the right directory - `cd breeze-react`
-2. Run the following - `cp .env.example .env` and make updates accordingly
+1. Install vendor packages with
+   `docker run --rm --pull=always -v "$(pwd)":/opt -w /opt laravelsail/php83-composer:latest bash -c "composer install"`
+2. Make sure you're in the right directory - `cd breeze-react`
+3. Run the following - `cp .env.example .env` and make updates accordingly
     1. `APP_KEY` is required to boot Laravel. You can run `./vendor/bin/sail artisan key:generate` to generate it
-3. Run `./vendor/bin/sail up`
-4. Run `./vendor/bin/sail artisan migrate`
-5. Run `./vendor/bin/sail npm run dev` in another terminal window
-6. By default, the site's url is `http://localhost`
+4. Run `./vendor/bin/sail up`
+5. Run `./vendor/bin/sail artisan migrate`
+6. Run `./vendor/bin/sail npm run dev` in another terminal window
+7. By default, the site's url is `http://localhost`
 
-7. By default, the site's url is `http://0.0.0.0/`
-8. `sail up` will essentially run the site in production mode. If you want Hot Module Replacement, you will also need to
+8. By default, the site's url is `http://0.0.0.0/`
+9. `sail up` will essentially run the site in production mode. If you want Hot Module Replacement, you will also need to
    run `./vendor/bin/sail npm run dev` in another terminal window
 
 ## Tooling
