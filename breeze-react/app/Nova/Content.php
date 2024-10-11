@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
@@ -20,7 +21,7 @@ class Content extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'content';
 
     /**
      * The columns that should be searched.
@@ -32,6 +33,11 @@ class Content extends Resource
         'content',
     ];
 
+    public function title()
+    {
+        return 'zzz'.parent::title();
+    }
+
     /**
      * Get the fields displayed by the resource.
      *
@@ -41,6 +47,9 @@ class Content extends Resource
     {
         return [
             ID::make()->sortable(),
+            Text::make('content')->fullWidth()->displayUsing(function ($content) {
+                return 'zzz '.$content;
+            }),
             Trix::make('content')->fullWidth()->alwaysShow(),
         ];
     }

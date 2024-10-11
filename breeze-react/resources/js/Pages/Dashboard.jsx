@@ -21,6 +21,36 @@ export default function Dashboard() {
                     </div>
                 </div>
             </div>
+            <div>
+                <p>
+                    Today I spent <span>most</span> of the day researching ways
+                    to ...
+                    <span className="inline-flex items-baseline">
+                        <img
+                            src="https://place-hold.it/42/42"
+                            alt="Woot woot"
+                            className="mx-1 h-5 w-5 self-center rounded-full"
+                        />
+                        <span>Kramer</span>
+                    </span>
+                    keeps telling me there is no way to make it work, that ...
+                </p>
+            </div>
+            <div>
+                <p>
+                    Today I spent <span>most</span> of the day researching ways
+                    to ...
+                    <span>
+                        <img
+                            src="https://place-hold.it/42/42"
+                            alt="Woot woot"
+                            className="mx-1 h-5 w-5 self-center rounded-full"
+                        />
+                        <span>Kramer</span>
+                    </span>
+                    keeps telling me there is no way to make it work, that ...
+                </p>
+            </div>
         </AuthenticatedLayout>
     )
 }

@@ -41,7 +41,8 @@ Check out [history.md](history.md) for how I bootstrapped this project
    Helpers because it's something I'll have to be in the habit of updating constantly with cmd+shift+.
 2. Pest. You can run tests with `./vendor/bin/sail php ./vendor/bin/pest`. Remember to have `./vendor/bin/sail up`
    running in another terminal. Refer to the documentation here - https://pestphp.com/docs/writing-tests
-3.
+    1. Alternatively you can run `./vendor/bin/sail php artisan test`
+    2. If you have php locally, for the moment you can also just run `php artisan test`
 
 ## General Tasks
 
