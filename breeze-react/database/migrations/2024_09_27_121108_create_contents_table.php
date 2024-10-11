@@ -6,13 +6,9 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('contents', function (Blueprint $table) {
-            //            $table->uuid('id')->primary()->default(new Expression('gen_random_uuid()'));
             $table->uuid('id')->primary();
             $table->text('content');
             $table->timestamps();
@@ -20,9 +16,6 @@ return new class extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('contents');
