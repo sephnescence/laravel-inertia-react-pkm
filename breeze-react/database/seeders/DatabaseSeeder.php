@@ -2,9 +2,8 @@
 
 namespace Database\Seeders;
 
-use App\Models\Content;
+use App\Models\Location;
 use App\Models\User;
-use App\Services\LocationFactoryService;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -14,13 +13,17 @@ class DatabaseSeeder extends Seeder
 
     public function run(): void
     {
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        $user = User::factory()
+//            ->has(Location::factory()->count(10), 'locations')
+            ->create([
+                'name' => 'Test User',
+                'email' => 'test@example.com',
+            ]);
 
-        Content::factory(10)->create();
+        Location::factory()->recycle($user)->count(10)->create();
 
-        app(LocationFactoryService::class)->createLocationsUntilDepth(5);
+        //        Content::factory(10)->create();
+
+        //        app(LocationFactoryService::class)->createLocationsUntilDepth(5);
     }
 }

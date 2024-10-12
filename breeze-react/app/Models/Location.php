@@ -14,7 +14,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property string $user_id
  * @property string $parent_location_id
  * @property string $icon
- * @property string $name
+ * @property string $display_name
  * @property string $description
  * @property Carbon $created_at
  * @property Carbon $updated_at
@@ -33,4 +33,14 @@ class Location extends Model
     {
         return $this->hasMany(Location::class, 'parent_location_id');
     }
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    //    public function scopeOwnedByLoggedInUser(Builder $query): static
+    //    {
+    //        return $query->whereNotNull('user_id');
+    //    }
 }

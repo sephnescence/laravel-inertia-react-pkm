@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreignIdFor(User::class);
             $table->foreignUuid('parent_location_id')->nullable()->references('id')->on('locations');
             $table->string('icon');
-            $table->string('name');
+            $table->string('display_name');
             $table->string('description');
             $table->timestampsTz();
             $table->softDeletesTz();
