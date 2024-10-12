@@ -38,9 +38,4 @@ class Location extends Model
     {
         return $this->belongsTo(User::class);
     }
-
-    //    public function scopeOwnedByLoggedInUser(Builder $query): static
-    //    {
-    //        return $query->whereNotNull('user_id');
-    //    }
 }

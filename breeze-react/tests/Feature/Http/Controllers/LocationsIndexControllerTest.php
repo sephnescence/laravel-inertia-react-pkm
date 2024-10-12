@@ -22,7 +22,10 @@ it('Returns the logged in user\'s locations', function () {
     actingAs($user)
         ->get(route('locations.index'))
         ->assertOk()
-        ->assertSee($location->display_name);
+        ->assertSeeInOrder([
+            'Create Location',
+            $location->display_name,
+        ]);
 });
 
 it('Returns the location in alphabetical order - Using a sequencer', function () {
@@ -42,6 +45,7 @@ it('Returns the location in alphabetical order - Using a sequencer', function ()
         ->get(route('locations.index'))
         ->assertOk()
         ->assertSeeInOrder([
+            'Create Location',
             'Location A',
             'Location B',
         ]);
