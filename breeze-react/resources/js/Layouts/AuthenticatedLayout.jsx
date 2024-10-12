@@ -22,7 +22,6 @@ export default function Authenticated({ header, children }) {
                                     <ApplicationLogo className="block h-9 w-auto fill-current" />
                                 </Link>
                             </div>
-
                             <div className="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                                 <NavLink
                                     href={route('dashboard')}
@@ -31,16 +30,8 @@ export default function Authenticated({ header, children }) {
                                     Dashboard
                                 </NavLink>
                                 <NavLink
-                                    href={route('content.index')}
-                                    active={route().current('content.index')}
-                                >
-                                    Content
-                                </NavLink>
-                                <NavLink
                                     href={route('locations.index')}
-                                    onClick={() => {
-                                        usePage().url = route('locations.index')
-                                    }}
+                                    active={route().current('locations.index')}
                                 >
                                     Locations
                                 </NavLink>
@@ -102,7 +93,7 @@ export default function Authenticated({ header, children }) {
                                         (previousState) => !previousState,
                                     )
                                 }
-                                className="inline-flex items-center justify-center rounded-md p-2 transition duration-150 ease-in-out hover:bg-gray-100 focus:bg-gray-100 focus:outline-none"
+                                className="inline-flex items-center justify-center rounded-md p-2 transition duration-150 ease-in-out focus:outline-none"
                             >
                                 <svg
                                     className="h-6 w-6"

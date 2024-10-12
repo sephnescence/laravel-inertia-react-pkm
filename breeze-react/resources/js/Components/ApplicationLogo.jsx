@@ -6,43 +6,43 @@ export default function ApplicationLogo(props) {
             xmlns="http://www.w3.org/2000/svg"
         >
             <circle cx="65" cy="65" r="65" fill="#5A4EAE" />
-            <g stroke="#FFF" stroke-width="1.5">
+            <g stroke="#FFF" strokeWidth="1.5">
                 {/*// <!-- Neural Network Nodes spread out in a circular pattern -->*/}
                 {/*// <!-- Outer Layer -->*/}
                 <circle
                     cx="65"
                     cy="20"
                     r="5"
-                    ffill="none"
+                    fill="none"
                     stroke="white"
-                    stroke-width="3"
+                    strokeWidth="3"
                 />
                 {/*// <!-- Top Center -->*/}
                 <circle
                     cx="100"
                     cy="30"
                     r="5"
-                    ffill="none"
+                    fill="none"
                     stroke="white"
-                    stroke-width="3"
+                    strokeWidth="3"
                 />
                 {/*// <!-- Top Right -->*/}
                 <circle
                     cx="110"
                     cy="65"
                     r="5"
-                    ffill="none"
+                    fill="none"
                     stroke="white"
-                    stroke-width="3"
+                    strokeWidth="3"
                 />
                 {/*// <!-- Middle Right -->*/}
                 <circle
                     cx="100"
                     cy="100"
                     r="5"
-                    ffill="none"
+                    fill="none"
                     stroke="white"
-                    stroke-width="3"
+                    strokeWidth="3"
                 />
                 {/*// <!-- Bottom Right -->*/}
                 {/*// <!-- Center Circle -->*/}
@@ -52,7 +52,7 @@ export default function ApplicationLogo(props) {
                     r="24"
                     fill="none"
                     stroke="white"
-                    stroke-width="4"
+                    strokeWidth="4"
                 />
                 {/*// <!-- Connections pointing towards the center circle, not touching -->*/}
                 <line x1="97" y1="33" x2="70" y2="60" stroke="white" />

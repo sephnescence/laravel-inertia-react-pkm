@@ -2,12 +2,16 @@
 
 namespace App\Http\Controllers;
 
-class LocationsIndexController extends Controller
+use Inertia\Inertia;
+
+class LocationIndexController extends Controller
 {
     public function __invoke()
     {
         $locations = auth()->user()->locations()->orderBy('display_name')->get(['display_name']);
 
-        return view('locations.index', compact('locations'));
+        return Inertia::render('Location/Index', [
+            'locations' => $locations,
+        ]);
     }
 }

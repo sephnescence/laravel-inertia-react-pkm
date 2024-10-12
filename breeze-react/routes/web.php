@@ -1,7 +1,6 @@
 <?php
 
-use App\Http\Controllers\ContentController;
-use App\Http\Controllers\LocationsIndexController;
+use App\Http\Controllers\LocationIndexController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -20,28 +19,11 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::group(['prefix' => 'examples'], function () {
-    Route::get('blade', function () {
-        return view('examples/blade');
-    });
-    Route::get('jsx', function () {
-        return Inertia::render('Examples/jsx');
-    });
-    Route::get('jsx-2', function () {
-        return Inertia::render('Examples/jsx-2');
-    });
-    Route::get('tsx', function () {
-        return 'TSX has not been enabled yet. I will have to configure vite and ts';
-    });
-});
-
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::get('/locations', LocationsIndexController::class)->name('locations.index');
+    Route::get('/locations', LocationIndexController::class)->name('locations.index');
 });
-
-Route::resource('content', ContentController::class);
 
 require __DIR__.'/auth.php';
